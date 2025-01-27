@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --beige500: rgb(152, 144, 139);
+  --beige100: rgb(248, 244, 240);
+  --grey900: rgb(32, 31, 36);
+  --grey500: rgb(105, 104, 104);
+  --grey300: rgb(179, 179, 179);
+  --grey100: rgb(242, 242, 242);
+  --green: rgb(39, 124, 120);
+  --yellow: rgb(242, 205, 172);
+  --cyan: rgb(130, 201, 215);
+  --navy: rgb(98, 96, 112);
+  --red: rgb(201, 71, 54);
+  --purple: rgb(130, 108, 176);
+  --lightpurple: rgb(175, 129, 186);
+  --turqoise: rgb(89, 124, 124);
+  --brown: rgb(147, 103, 79);
+  --magenta: rgb(147, 79, 111);
+  --blue: rgb(63, 130, 178);
+  --navygrey: rgb(151, 160, 172);
+  --armygreen: rgb(127, 145, 97);
+  --gold: rgb(202, 179, 97);
+  --orange: rgb(190, 108, 73);
+  --white: rgb(255, 255, 255);
+  --publicSans: "Public Sans", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5,
+p,
+small {
+  font-size: 1.2rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+.label-text {
+  color: var(--labelText);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.btn {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.link-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.dark-btn {
+  background: var(--grey900);
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.link-btn:hover {
+  transform: scale(0.99);
+  text-shadow: 0px 5px 12.5px rgba(15, 15, 20, 0.5);
+}
+
+.error-text {
+  color: var(--red);
+}
+
+.success-text {
+  color: var(--green);
+}
+
+.thin {
+  font-weight: 200;
+}
+
+.mid-thin {
+  font-weight: 300;
+}
+
+.dark-text {
+  color: var(--grey900);
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.bg-green {
+  background: var(--green);
+}
+
+.bg-gold {
+  background: var(--gold);
+}
+
+.bg-cyan {
+  background: var(--cyan);
+}
+
+/* custom utility classes */
+
+.space-between {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}

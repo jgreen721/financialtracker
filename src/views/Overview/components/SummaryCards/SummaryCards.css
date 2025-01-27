@@ -1,0 +1,20 @@
+.summary-cards-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: openfromleft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes openfromleft {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .summary-cards-row {
+    flex-direction: column;
+  }
+}

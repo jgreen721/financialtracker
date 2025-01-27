@@ -1,0 +1,68 @@
+.pots-card-content-section {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.pots-card-column {
+  flex: 1;
+}
+
+.pots-left-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  box-shadow: 0px 5px 7.5px rgba(15, 15, 15, 0.5),
+    2px -3px 8px rgba(10, 10, 15, 0.35) inset;
+  background: var(--beige100);
+}
+
+.pots-total-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pots-total-title {
+  color: var(--labelText);
+}
+
+.pots-summary-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  gap: 0.8rem;
+}
+
+.pot-summary-item {
+  position: relative;
+  height: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.pot-summary-border {
+  position: absolute;
+  inset: 0;
+  width: 3px;
+  border-radius: 1rem;
+  transform: scaleY(0);
+  animation: scaleYFromCenter 1s var(--delay) forwards;
+}
+
+.pot-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateX(-20rem);
+  animation: slideright 1s var(--delay) forwards;
+}
+
+@media screen and (max-width: 850px) {
+  .pots-card-content-section {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,32 @@
+.overview-main-content {
+  margin-top: 3.2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.overview-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.overview-content-column:first-child {
+  flex: 1.5;
+}
+
+.overview-content-column:nth-child(2) {
+  flex: 1;
+}
+
+/* Component Classes */
+
+.overview-section {
+  background: var(--white);
+  padding: 3.2rem;
+  border-radius: 1rem;
+}
+
+.overview-section-content {
+  margin-top: 3.2rem;
+}

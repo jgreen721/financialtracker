@@ -1,0 +1,10 @@
+.budgets-view-content {
+  display: flex;
+  border: 2px solid red;
+  height: 500px;
+}
+
+.budgets-content-column {
+  flex: 1;
+  border: 1px solid black;
+}

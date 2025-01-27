@@ -1,0 +1,27 @@
+.modal {
+  border: 2px solid black;
+  width: clamp(45%, 500px, 90%);
+  padding: 3.2rem;
+  border-radius: 1rem;
+  background: white;
+}
+
+.modal-title-row {
+  margin-bottom: 2rem;
+}
+
+.close-modal-btn {
+  border-radius: 50%;
+  border: 1px solid black;
+  background: transparent;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.modal-children-content {
+  padding-top: 1.5rem;
+}

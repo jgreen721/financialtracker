@@ -1,0 +1,118 @@
+.nav {
+  background: var(--navBg);
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  --navPaddingX: 3.2rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 300px;
+  transition: 0.5s ease;
+}
+
+.hide-nav {
+  width: 0px;
+  overflow: hidden;
+}
+
+.nav-col {
+  flex-grow: 1;
+}
+
+.nav-logo-div {
+  padding: 4rem var(--navPaddingX);
+}
+
+.nav-link-item {
+  width: 250px;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+  margin-right: 5rem;
+}
+
+.nav-link:hover {
+  /* text-shadow: 0px 0px 2px var(--white); */
+  transform: translateX(1rem);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem var(--navPaddingX);
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.nav-link * {
+  position: relative;
+  z-index: 5;
+}
+
+.nav-link-active {
+  color: var(--activeLinkText);
+  pointer-events: none;
+  cursor: grab;
+}
+
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--activeLinkBg);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: activelinkanimate 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
+}
+
+@keyframes activelinkanimate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.shadow-nav-icon {
+  position: absolute;
+  inset: 0;
+}
+
+.nav-link-default {
+  color: var(--navLinkText);
+}
+
+.minimize-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: var(--neutralText);
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 3rem var(--navPaddingX);
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.minimize-menu-btn * {
+  position: relative;
+  z-index: 5;
+}
+
+.minimize-menu-btn:hover {
+  transform: translateX(-0.5rem) scale(0.99);
+  transition: 0.5s ease;
+}
+
+.minimize-menu-btn::after {
+  content: "";
+  position: absolute;
+  background: var(--green);
+  inset: 0;
+  filter: blur(15px);
+  opacity: 55%;
+}

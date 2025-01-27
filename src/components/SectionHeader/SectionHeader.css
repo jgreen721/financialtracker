@@ -1,0 +1,21 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-header-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--labelText);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.section-header-link-btn:hover {
+  /* transform: translateY(0.25rem); */
+  transition: 0.25s ease;
+  text-shadow: 0px 0px 5px var(--labelText);
+}

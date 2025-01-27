@@ -1,0 +1,55 @@
+.app[data-theme="default"] {
+  --navBg: var(--grey900);
+  --mainFont: var(--publicSans);
+  --navLinkText: var(--grey300);
+  --activeLinkText: var(--grey900);
+  --activeLinkBg: var(--beige100);
+  --neutralText: var(--grey300);
+  --darkText: var(--grey900);
+  --labelText: var(--grey500);
+}
+
+body {
+  background: var(--beige100);
+}
+
+.app {
+  display: flex;
+  font-family: var(--mainFont);
+  /* border: 2px solid red; */
+}
+
+.app-content {
+  width: 100%;
+  position: relative;
+  /* border: 5px solid red; */
+}
+
+.accordion-open {
+  transition: 0.5s ease;
+  transform: scaleX(1);
+}
+
+.accordion-close {
+  transition: 0.5s ease;
+  transform: scaleX(0);
+}
+
+/* Animations */
+@keyframes dropdown {
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes slideright {
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes scaleYFromCenter {
+  100% {
+    transform: scaleY(01);
+  }
+}

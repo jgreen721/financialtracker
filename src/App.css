@@ -64,3 +64,9 @@ body {
     transform: scaleY(01);
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .section-card {
+    padding: 1.2rem;
+  }
+}

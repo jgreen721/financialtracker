@@ -28,7 +28,7 @@ const Transactions = () => {
           </div>
           <h4 className="transaction-name">{transaction.name}</h4>
           </div>
-          <div className="transaction-right-column-data flex-column">
+          <div className="column-data flex-column">
             <h2 className={`${transaction.amount > 0 ? 'dark-text' : 'green-text'}`}>{transaction.amount > 0 ? "+" : "-"}${Math.abs(transaction.amount)}</h2>
             <h4 className="mid-thin">{formatDate(transaction.date)}</h4>
           </div> 

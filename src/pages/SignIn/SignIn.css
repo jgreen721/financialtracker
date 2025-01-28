@@ -81,10 +81,16 @@
   position: relative;
 }
 
-.password-btn {
+/* .password-btn {
   position: absolute;
   right: 1rem;
   top: 2.5rem;
+} */
+
+.form-icon {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
 }
 
 .form-control {

@@ -1,14 +1,23 @@
 .budget-card {
+  /* border: 2px solid black; */
+  margin: 2rem 0;
+}
+
+.spending-progress-bar {
+  margin: 2rem 0;
   border: 2px solid black;
 }
 
-.latest-spending-items {
-  padding: 2rem;
-  border: 2px solid black;
+.latest-spending-card {
   background: var(--beige100);
+}
+
+.latest-spending-items {
+  /* padding: 2rem; */
+  /* border: 2px solid black; */
   border-radius: 0.5rem;
 }
 
 .transaction-item {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }

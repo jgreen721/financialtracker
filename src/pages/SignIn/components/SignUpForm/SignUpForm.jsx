@@ -67,7 +67,7 @@ const SignUpForm = ({setShowLogin}) => {
         />
         <button onClick={(e)=>{
           e.preventDefault();
-          setShowPassword(showPassword=>showPassword = !showPassword)}} className="password-btn icon-btn">
+          setShowPassword(showPassword=>showPassword = !showPassword)}} className="password-btn icon-btn form-icon">
         <img src={showPassword ? iconHidePassword : iconShowPassword} alt="img"/>
         </button>
         <small className="form-caption">Password must be at least <span className="bold">8</span> characters</small>

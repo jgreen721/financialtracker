@@ -19,12 +19,14 @@ const BudgetCard = ({category,theme,transactions}) => {
           </button>
         </div>
       </div>
-      <div className="latest-spending-card">
+      <div className="spending-progress-bar"></div>
+
+      <div className="latest-spending-card section-card-small-padding">
         <div className="space-between">
           <h5>Latest Spending</h5>
-          <button className="">
+          <button className="link-btn">
             See All
-            <img src={iconCaretRight} alt="" />
+            <img className="ml-2" src={iconCaretRight} alt="" />
           </button>
         </div>
         <ul className="latest-spending-items">
@@ -37,8 +39,8 @@ const BudgetCard = ({category,theme,transactions}) => {
               </div>
               <h4>{transaction.name}</h4>
               </div>
-              <div>
-                <h5>{transaction.amount < 0 ? "-$" : "$"}{Math.abs(transaction.amount)}</h5>
+              <div className="flex-column column-data flex-end">
+                <h5>{transaction.amount < 0 ? "-$" : "$"}{Math.abs(transaction.amount).toFixed(2)}</h5>
                 <h5 className="mid-thin label-text">{transaction.date.split("T")[0]}</h5>
               </div>
               </div>

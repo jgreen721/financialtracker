@@ -97,7 +97,6 @@ label {
   background: transparent;
   outline: none;
   border: none;
-  text-decoration: underline;
   font-weight: 600;
   margin-left: 1rem;
   cursor: pointer;
@@ -127,8 +126,20 @@ label {
   font-weight: 200;
 }
 
+.ml-2 {
+  margin-left: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 3rem;
+}
+
 .mid-thin {
   font-weight: 300;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .dark-text {
@@ -205,6 +216,10 @@ label {
 
 /* custom utility classes */
 
+.text-start {
+  text-align: start;
+}
+
 .space-between {
   position: relative;
   display: flex;
@@ -221,6 +236,14 @@ label {
 .flex-start {
   display: flex;
   align-items: center;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+.column-data {
+  gap: 1.5rem;
 }
 
 .gap-2 {

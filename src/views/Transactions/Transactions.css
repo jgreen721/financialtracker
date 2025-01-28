@@ -1,0 +1,25 @@
+.search-form-div {
+  position: relative;
+}
+
+.transaction-table {
+  width: 100%;
+}
+
+.transaction-row {
+  padding: 1.2rem;
+  border: 2px solid red;
+}
+
+td,
+th {
+  padding: 1rem;
+}
+
+td {
+  border-bottom: 2px solid var(--beige100);
+}
+
+tr {
+  padding: 1.2rem;
+}

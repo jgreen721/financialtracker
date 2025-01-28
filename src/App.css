@@ -41,6 +41,11 @@ body {
   border-radius: 1rem;
 }
 
+.section-card-small-padding {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
 /* Animations */
 @keyframes dropdown {
   100% {

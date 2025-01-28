@@ -1,7 +1,7 @@
 .budgets-view-content {
   display: flex;
-  border: 2px solid red;
-  height: 500px;
+  gap: 2rem;
+  /* border: 2px solid red; */
 }
 
 .budgets-content-column {

@@ -9,6 +9,7 @@
   transition: 0.5s ease;
   border-top-left-radius: 2rem;
   border-top-right-radius: 15%;
+  padding-bottom: 5rem;
 }
 
 .mobile-nav-link-item {

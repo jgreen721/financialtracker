@@ -13,7 +13,7 @@ const Pots = () => {
   // console.log("Pots",pots);
  
   return (
-    <div className="pots-card overview-section">
+    <div className="pots-card section-card">
       <SectionHeader title="Pots" link="pots" btnCaption="See Details"/>
       <div className="pots-card-content-section overview-section-content">
         <div className="pots-card-column pots-left-column">

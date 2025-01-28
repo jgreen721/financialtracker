@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {motion} from "framer-motion"
 import {Outlet} from "react-router-dom"
-import { PageHeader,Navbar } from '../../components'
+import { PageHeader,Navbar,MobileNav } from '../../components'
 import { AppProvider } from '../../context/AppContext'
 import "./Dashboard.css"
 
@@ -28,6 +28,7 @@ const Dashboard = () => {
            <Outlet/>
           </div>
         </div>
+        <MobileNav/>
       </div>
       </AppProvider>
   )

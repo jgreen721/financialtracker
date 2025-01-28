@@ -30,7 +30,7 @@
 .color-dot {
   width: 1.5rem;
   height: 1.5rem;
-  background: black;
+  /* background: black; */
   border-radius: 50%;
 }
 

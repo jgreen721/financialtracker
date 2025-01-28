@@ -17,13 +17,13 @@ const Transactions = () => {
     return dayString;
   }
   return (
-    <div className="transactions-overview-container overview-section">
+    <div className="transactions-overview-container overview-section section-card">
       <SectionHeader title="Transactions" link="transactions" btnCaption="View All"/>
       <ul className="transactions overview-section-content">
       {transactions.filter((t,i)=>i < 5).map((transaction,idx)=>(
         <li key={idx} className="transaction-item space-between">
           <div className="transaction-content-row">
-          <div className="transaction-avatar-div">
+          <div className="avatar-div">
             <img src={transaction.avatar} alt="" />
           </div>
           <h4 className="transaction-name">{transaction.name}</h4>

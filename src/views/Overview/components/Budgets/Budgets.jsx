@@ -8,7 +8,7 @@ const Budgets = () => {
 
   // console.log(budgets);
   return (
-    <div className="overview-section">
+    <div className="section-card">
       <SectionHeader title="Budgets" link="budgets" btnText="See Details"/>
       <div className="overview-section-content budgets-row">
         <div className="budgets-chart-column">

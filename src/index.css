@@ -15,6 +15,8 @@ html {
   --grey500: rgb(105, 104, 104);
   --grey300: rgb(179, 179, 179);
   --grey100: rgb(242, 242, 242);
+  --white: rgb(255, 255, 255);
+  /* Category Theme Colors  -- add to as/if necessary */
   --green: rgb(39, 124, 120);
   --yellow: rgb(242, 205, 172);
   --cyan: rgb(130, 201, 215);
@@ -30,7 +32,8 @@ html {
   --armygreen: rgb(127, 145, 97);
   --gold: rgb(202, 179, 97);
   --orange: rgb(190, 108, 73);
-  --white: rgb(255, 255, 255);
+
+  /* End Theme Colors*/
   --publicSans: "Public Sans", serif;
 }
 
@@ -87,6 +90,7 @@ label {
   font-weight: 600;
   cursor: pointer;
   transition: 0.5s ease;
+  white-space: nowrap;
 }
 
 .link-btn {
@@ -131,6 +135,10 @@ label {
   color: var(--grey900);
 }
 
+.light-text {
+  color: var(--beige100);
+}
+
 .green-text {
   color: var(--green);
 }
@@ -147,6 +155,54 @@ label {
   background: var(--cyan);
 }
 
+.bg-yellow {
+  background: var(--yellow);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
+.bg-red {
+  background: var(--red);
+}
+
+.bg-purple {
+  background: var(--purple);
+}
+
+.bg-light-purple {
+  background: var(--lightpurple);
+}
+
+.bg-turqoise {
+  background: var(--turqoise);
+}
+
+.bg-magenta {
+  background: var(--magenta);
+}
+
+.bg-brown {
+  background: var(--brown);
+}
+
+.bg-blue {
+  background: var(--blue);
+}
+
+.bg-navy-blue {
+  background: var(--navygrey);
+}
+
+.bg-army-green {
+  background: var(--armygreen);
+}
+
+.bg-orange {
+  background: var(--orange);
+}
+
 /* custom utility classes */
 
 .space-between {
@@ -159,6 +215,26 @@ label {
 .flex-column {
   position: relative;
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 1.5rem;
+}
+
+.avatar-div {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-div img {
+  height: 100%;
+  width: 100%;
 }

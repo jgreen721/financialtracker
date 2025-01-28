@@ -116,3 +116,10 @@
   filter: blur(15px);
   opacity: 55%;
 }
+
+@media screen and (max-width: 650px) {
+  .nav {
+    width: 0px;
+    overflow: hidden;
+  }
+}

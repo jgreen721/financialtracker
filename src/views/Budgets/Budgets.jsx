@@ -12,7 +12,7 @@ const Budgets = () => {
   //   console.log(`Category:${category} - Transactions:${data.length}`);
   //   console.log("---------------------------------------------")
   // })
-  console.log(transactions[0])
+  // console.log(transactions[0])
 
   return (
     <div className="budgets-view-parent-container">
@@ -22,7 +22,7 @@ const Budgets = () => {
   <div className="budgets-content-column"></div>
   <div className="budgets-content-column">
     {categories.map(category=>(
-        <BudgetCard key={category} category ={category} transactions={transactions.filter(transaction=>transaction.category == category)}/>
+        <BudgetCard key={category.id} category={category.category} theme={category.theme} transactions={transactions.filter(transaction=>transaction.category == category.category)}/>
       ))
     }
   </div>

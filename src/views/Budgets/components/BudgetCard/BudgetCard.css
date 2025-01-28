@@ -1,0 +1,14 @@
+.budget-card {
+  border: 2px solid black;
+}
+
+.latest-spending-items {
+  padding: 2rem;
+  border: 2px solid black;
+  background: var(--beige100);
+  border-radius: 0.5rem;
+}
+
+.transaction-item {
+  border: 1px solid red;
+}

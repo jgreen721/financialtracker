@@ -21,6 +21,7 @@
 .signin-content {
   display: flex;
   overflow: hidden;
+  padding: 2.5rem;
   /* border: 4px solid greenyellow; */
 }
 
@@ -164,5 +165,9 @@
   }
   .signin-img-div {
     display: none;
+  }
+
+  .form-control {
+    padding: 1.2rem;
   }
 }

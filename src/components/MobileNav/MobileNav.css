@@ -1,0 +1,55 @@
+.mobile-nav {
+  background: var(--navBg);
+  color: var(--white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transition: 0.5s ease;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 15%;
+}
+
+.mobile-nav-link-item {
+  flex: 1;
+  position: relative;
+}
+
+.active-mobile-link-item {
+  background: radial-gradient(gray, white);
+}
+
+.mobile-nav-links {
+  display: flex;
+}
+
+.mobile-nav-link-item::after {
+  content: "";
+  position: absolute;
+  height: 85%;
+  width: 2px;
+  background: black;
+  top: 7.5%;
+  filter: blur(5px);
+}
+
+.mobile-nav-link-item:last-child {
+  border-right: none;
+}
+
+.mobile-nav-link {
+  /* color: var(--white); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 2rem 0;
+}
+
+@media screen and (max-width: 650px) {
+  .mobile-nav {
+    transform: scaleX(1);
+  }
+}

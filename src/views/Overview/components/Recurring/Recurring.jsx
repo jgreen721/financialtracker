@@ -10,7 +10,7 @@ const Recurring = () => {
     {id:3,title:"Due Soon",amount:"59.98",color:"bg-cyan"},
   ]
   return (
-    <div className="overview-section">
+    <div className="overview-section section-card">
       <SectionHeader title="Recurring Bills" link="recurring" btnText="See Details"/>
       <ul className="recurring-section-list overview-section-content">
         {recurringData.map(item=>(

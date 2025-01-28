@@ -8,3 +8,9 @@
   flex: 1;
   border: 1px solid black;
 }
+
+@media screen and (max-width: 1050px) {
+  .budgets-view-content {
+    flex-direction: column;
+  }
+}

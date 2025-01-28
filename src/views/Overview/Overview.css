@@ -21,12 +21,12 @@
 
 /* Component Classes */
 
-.overview-section {
-  background: var(--white);
-  padding: 3.2rem;
-  border-radius: 1rem;
-}
-
 .overview-section-content {
   margin-top: 3.2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .overview-main-content {
+    flex-direction: column;
+  }
 }

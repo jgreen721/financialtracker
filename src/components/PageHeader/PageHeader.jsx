@@ -25,14 +25,14 @@ const PageHeader = () => {
     
   return (
     <div className="page-header">
-        <h1 className="capitalize">{`${user}'s`} {location.pathname == '/' ? "Overview" : location.pathname == "recurring" ? "Recurring Bills" : location.pathname.split("/")[1]}</h1>
+        <h1 className="capitalize page-header-h1">{`${user}'s`} {location.pathname == '/' ? "Overview" : location.pathname == "recurring" ? "Recurring Bills" : location.pathname.split("/")[1]}</h1>
         <div className="page-btns-row">
           <div>
-          <button onClick={()=>setShowMenu(true)} className={`icon-btn ${showMenu ? "hide-menu-btn" : "show-menu-btn"}`}>
+          <button onClick={()=>setShowMenu(true)} className={`icon-btn icon-menu-btn ${showMenu ? "hide-menu-btn" : "show-menu-btn"}`}>
             <IoMdNavigate />
           </button>
           </div>
-          {location.pathname == "/pots" || location.pathname == "/budgets" ? <button className="btn dark-btn" onClick={toggleModal}>+ Add New {location.pathname.split("/")[1].replace("s","")}</button> : null}
+          {location.pathname == "/pots" || location.pathname == "/budgets" ? <button className="btn dark-btn" onClick={toggleModal}>+ <span className="desktop-btn-text">Add New {location.pathname.split("/")[1].replace("s","")}</span></button> : null}
           <button onClick={handleSignOut} className="signout-btn icon-btn">
             <FaSignOutAlt/>
           </button>

@@ -35,6 +35,12 @@ body {
   transform: scaleX(0);
 }
 
+.section-card {
+  background: var(--white);
+  padding: 3.2rem;
+  border-radius: 1rem;
+}
+
 /* Animations */
 @keyframes dropdown {
   100% {

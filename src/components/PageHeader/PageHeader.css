@@ -32,3 +32,17 @@
 .show-menu-btn {
   transform: translateY(0rem);
 }
+
+@media screen and (max-width: 650px) {
+  .page-header-h1 {
+    font-size: 1.4rem;
+  }
+
+  .desktop-btn-text {
+    display: none;
+  }
+
+  .icon-menu-btn {
+    transform: translateY(5rem);
+  }
+}

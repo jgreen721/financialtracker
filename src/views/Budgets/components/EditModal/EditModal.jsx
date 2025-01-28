@@ -7,9 +7,9 @@ const EditModal = () => {
  
         
   
-        const [category,setCategory] = useState(categories[0])
+        const [category,setCategory] = useState(categories[0].category)
         const [showCategory,setShowCategory] = useState(false);
-        const [theme,setTheme] = useState(themes[0])
+        const [theme,setTheme] = useState(themes[0].name)
         const [showTheme,setShowTheme] = useState(false);
         const [max,setMax] = useState("");
 
@@ -30,8 +30,8 @@ const EditModal = () => {
                </div>
                <div className={`custom-select-drop-down ${showCategory ? 'show-drop-down' : 'hide-drop-down'}`}>
                    {categories.map(category=>(
-                       <li className="drop-down-item space-between" key={category}>
-                           <h4>{category}</h4>
+                       <li className="drop-down-item space-between" key={category.id}>
+                           <h4>{category.category}</h4>
                        </li>
                    ))}
                </div>
@@ -56,9 +56,9 @@ const EditModal = () => {
                </div>
                <div className={`custom-select-drop-down ${showTheme ? 'show-drop-down' : 'hide-drop-down'}`}>
                    {themes.map(theme=>(
-                       <li className="drop-down-item space-between" key={theme}>
-                           <h4>{theme}</h4>
-                           <div className="color-dot"></div>
+                       <li className="drop-down-item space-between" key={theme.id}>
+                           <h4>{theme.name}</h4>
+                           <div className={`color-dot ${theme.className}`}></div>
 
                        </li>
                    ))}

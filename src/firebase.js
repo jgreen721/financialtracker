@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDPRSh3n4cAPKVhq4hJ0ZALrCWd5naxD5M",
-  authDomain: "financial-tracker-c7355.firebaseapp.com",
-  projectId: "financial-tracker-c7355",
-  storageBucket: "financial-tracker-c7355.firebasestorage.app",
-  messagingSenderId: "759791630450",
-  appId: "1:759791630450:web:53aec1098bfc423467aaeb",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSANGER_SENDER_ID,
+  appId: import.meta.env.VITE_API_ID,
 };
 
 // Initialize Firebase

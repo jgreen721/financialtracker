@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
 
   //UI state
   const [showMenu,setShowMenu] = useState(true);
-  const [showModal,setShowModal] = useState(false);
+  const [showModal,setShowModal] = useState(true);
 
 
   useEffect(() => {

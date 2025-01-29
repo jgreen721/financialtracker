@@ -1,5 +1,4 @@
 .pots-cards {
-  display: flex;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.4rem;
@@ -31,4 +30,16 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: 600;
+}
+
+.circle-dot {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 850px) {
+  .pots-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

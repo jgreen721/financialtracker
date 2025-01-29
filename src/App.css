@@ -46,6 +46,34 @@ body {
   border-radius: 1rem;
 }
 
+/* Recurring/Budgets utility classes */
+
+.view-content-flex {
+  display: flex;
+  gap: 2rem;
+  /* border: 2px solid red; */
+}
+
+.view-content-column {
+  /* flex: 1; */
+  /* border: 1px solid black; */
+}
+
+.thin-content-column {
+  flex: 1;
+}
+
+.wide-content-column {
+  flex: 2;
+}
+
+.border-left {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 4px;
+}
+
 /* Animations */
 @keyframes dropdown {
   100% {
@@ -68,5 +96,9 @@ body {
 @media screen and (max-width: 1050px) {
   .section-card {
     padding: 1.2rem;
+  }
+
+  .view-content-flex {
+    flex-direction: column;
   }
 }

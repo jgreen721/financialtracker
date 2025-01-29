@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
 
   //UI state
   const [showMenu,setShowMenu] = useState(true);
-  const [showModal,setShowModal] = useState(true);
+  const [showModal,setShowModal] = useState(false);
 
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const AppProvider = ({ children }) => {
     fetch("data.json")
     .then(res=>res.json())
     .then(res=>{
-      console.log("Res",res);
+      // console.log("Res",res);
       setBalance(res.balance);
       setPots(res.pots);
       setBudgets(res.budgets);

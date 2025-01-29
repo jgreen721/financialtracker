@@ -32,7 +32,7 @@ const PageHeader = () => {
             <IoMdNavigate />
           </button>
           </div>
-          {location.pathname == "/pots" || location.pathname == "/budgets" ? <button className="btn dark-btn" onClick={toggleModal}>+ <span className="desktop-btn-text">Add New {location.pathname.split("/")[1].replace("s","")}</span></button> : null}
+          {location.pathname == "/pots" || location.pathname == "/budgets" || location.pathname == "/transactions" ? <button className="btn dark-btn" onClick={toggleModal}>+ <span className="desktop-btn-text">Add New {location.pathname.split("/")[1].replace("s","")}</span></button> : null}
           <button onClick={handleSignOut} className="signout-btn icon-btn">
             <FaSignOutAlt/>
           </button>

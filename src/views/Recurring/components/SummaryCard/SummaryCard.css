@@ -1,0 +1,8 @@
+.summary-recurring-item {
+  /* margin: 1rem 0; */
+  padding: 2rem 0;
+}
+
+.summary-recurring-item:not(:last-child) {
+  border-bottom: 2px solid var(--beige500);
+}

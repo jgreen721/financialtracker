@@ -3,7 +3,6 @@ import {iconCaretRight, iconEllipsis} from "../../../../const"
 import "./BudgetCard.css"
 
 const BudgetCard = ({category,theme,transactions}) => {
-  console.log(transactions);
   return (
     <div className="section-card budget-card">
       <div className="budget-card-title-row space-between">
@@ -30,8 +29,8 @@ const BudgetCard = ({category,theme,transactions}) => {
           </button>
         </div>
         <ul className="latest-spending-items">
-          {transactions.map(transaction=>(
-            <li className="transaction-item">
+          {transactions.map((transaction,idx)=>(
+            <li key={idx} className="transaction-item">
               <div className="space-between">
                 <div className="flex-start gap-2">
               <div className="transaction-icon-div avatar-div">

@@ -1,5 +1,17 @@
 .search-form-div {
   position: relative;
+  flex: 1;
+}
+
+.dropdown-row {
+  /* border: 1px solid red; */
+  flex: 2;
+  display: flex;
+}
+
+.dropdown-column {
+  flex: 1;
+  /* border: 1px solid green; */
 }
 
 .transaction-table {
@@ -8,7 +20,7 @@
 
 .transaction-row {
   padding: 1.2rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 td,

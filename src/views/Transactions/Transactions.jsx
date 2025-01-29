@@ -1,10 +1,27 @@
 import React from 'react'
 import {iconSearch} from "../../const"
 import {useAppContext} from "../../context/AppContext"
+import {DropDownInput, FormatAmount,FormatDate,TransactionModal} from "./components"
 import "./Transactions.css"
 
 const Transactions = () => {
   const {transactions} = useAppContext();
+  let dateFields =[
+    {id:1,field:"Oldest"},
+    {id:2,field:"A-Z"},
+    {id:3,field:"Z-A"},
+    {id:4,field:"Highest"},
+    {id:5,field:"Lowest"},
+]
+
+
+let categoryFields =[
+  {id:1,field:"Entertainment"},
+  {id:2,field:"Bills"},
+  {id:3,field:"Groceries"},
+  {id:4,field:"Dining Out"},
+  {id:5,field:"Transportation"},
+]
   return (
     <div className="section-card">
       {/* <ul className="transactions">
@@ -12,12 +29,21 @@ const Transactions = () => {
           <TransactionItem key={idx} transaction={transaction}/>
         ))}
       </ul> */}
-      <div className="space-between mb-4">
+      <div className="space-between mb-4 gap-2">
         <div className="search-form-div form-div">
           <label className="form-label" htmlFor="">
           <input type="text" className="form-control" placeholder="Search transactions" />
           <img className="form-icon" src={iconSearch} alt="" />
           </label>
+        </div>
+        <div className="dropdown-row">
+          <div className="dropdown-column">
+            <DropDownInput labelCaption="Sort by" placeholder="Latest" fields={dateFields}/>
+          </div>
+          <div className="dropdown-column">
+          <DropDownInput labelCaption="Category" placeholder="All Transactions" fields={categoryFields}/>
+
+          </div>
         </div>
       </div>
       <table className="transaction-table">
@@ -42,15 +68,16 @@ const Transactions = () => {
             {transaction.category}
           </td>
           <td>
-            {transaction.date}
+            <FormatDate date={transaction.date}/>
           </td>
           <td>
-            ${transaction.amount}
+            <FormatAmount amount={transaction.amount}/>
           </td>
           </tr>
         ))}
         </tbody>
       </table>
+      <TransactionModal/>
     </div>
   )
 }

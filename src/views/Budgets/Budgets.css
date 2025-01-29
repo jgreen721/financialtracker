@@ -1,7 +1,7 @@
-.budgets-view-content {
+/* .budgets-view-content {
   display: flex;
   gap: 2rem;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 .budgets-content-column {
@@ -13,4 +13,4 @@
   .budgets-view-content {
     flex-direction: column;
   }
-}
+} */

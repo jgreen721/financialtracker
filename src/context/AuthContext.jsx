@@ -23,10 +23,10 @@ export const AuthProvider = ({ children }) => {
         else{
             // console.log("user still has session -- retrieve their transactions and direct them to dashboard",user);
             let username = user.email.split("@")[0];
-            console.log("Username",username);
+            // console.log("Username",username);
             setUser(username);
             if(status == 200)setTimeout(()=>{navigate("/")},1500);
-            else navigate("/transactions");
+            else navigate("/budgets");
             
         }
     })

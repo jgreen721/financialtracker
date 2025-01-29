@@ -24,7 +24,7 @@ html {
   --red: rgb(201, 71, 54);
   --purple: rgb(130, 108, 176);
   --lightpurple: rgb(175, 129, 186);
-  --turqoise: rgb(89, 124, 124);
+  --turquoise: rgb(89, 124, 124);
   --brown: rgb(147, 103, 79);
   --magenta: rgb(147, 79, 111);
   --blue: rgb(63, 130, 178);
@@ -130,6 +130,10 @@ label {
   margin-left: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-4 {
   margin-bottom: 3rem;
 }
@@ -142,6 +146,14 @@ label {
   text-decoration: underline;
 }
 
+.bg-dark {
+  background: var(--grey900);
+}
+
+.bg-light {
+  background: var(--white);
+}
+
 .dark-text {
   color: var(--grey900);
 }
@@ -152,6 +164,10 @@ label {
 
 .green-text {
   color: var(--green);
+}
+
+.error-text {
+  color: var(--red);
 }
 
 .bg-green {
@@ -186,8 +202,8 @@ label {
   background: var(--lightpurple);
 }
 
-.bg-turqoise {
-  background: var(--turqoise);
+.bg-turquoise {
+  background: var(--turquoise);
 }
 
 .bg-magenta {
@@ -248,6 +264,10 @@ label {
 
 .gap-2 {
   gap: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
 }
 
 .avatar-div {

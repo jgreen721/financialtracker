@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionHeader } from '../../../../components'
+import { SectionHeader,BorderLabelCard } from '../../../../components'
 import { useAppContext } from '../../../../context/AppContext'
 import "./Budgets.css"
 
@@ -20,15 +20,9 @@ const Budgets = () => {
           </div>
         </div>
         <ul className="budgets-list">
-          {budgets.map(budget=>(
-            <li key={budget.category} className="budget-item">
-              <div style={{background:budget.theme}} className="border-left budget-border"></div>
-              <div className="flex-column budget-item-content">
-                <h5 className="mid-thin">{budget.category}</h5>
-                <h4>${budget.maximum}</h4>
-              </div>
-            </li>
-          ))}
+          {budgets.map((budget,idx)=>
+            <BorderLabelCard key={idx} delay={idx} label={budget.category} theme={budget.theme} amount={budget.maximum}/>
+)}
         </ul>
       </div>
     </div>

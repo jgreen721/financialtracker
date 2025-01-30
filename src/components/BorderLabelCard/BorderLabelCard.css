@@ -1,0 +1,23 @@
+.pot-summary-item {
+  position: relative;
+  height: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.pot-summary-border {
+  position: absolute;
+  inset: 0;
+  width: 3px;
+  border-radius: 1rem;
+  transform: scaleY(0);
+  animation: scaleYFromCenter 1s var(--delay) forwards;
+}
+
+.pot-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateX(-20rem);
+  animation: slideright 1s var(--delay) forwards;
+}

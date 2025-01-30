@@ -1,7 +1,13 @@
-.spending-summary-title {
-  margin-bottom: 2.6rem;
+.spending-summary-card {
+  /* border: 2px solid red; */
+  width: 100%;
 }
 
-.summary-budgets-item {
-  margin: 1.6rem;
+.spending-summary-title {
+  margin-bottom: 2rem;
+}
+
+.categories {
+  /* border: 2px solid black; */
+  width: 100%;
 }

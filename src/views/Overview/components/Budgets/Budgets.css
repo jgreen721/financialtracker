@@ -1,6 +1,6 @@
 .budgets-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 2.5rem;
 }
 
 .budgets-chart-column {
@@ -47,10 +47,16 @@
   z-index: 5;
 }
 
-.budget-item {
+.budgets-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+/* .budget-item {
   position: relative;
   margin: 1rem 0;
-  /* border: 2px solid black; */
+  border: 2px solid black;
 }
 
 .budget-item-content {
@@ -63,4 +69,4 @@
   height: 100%;
   width: 3px;
   left: 0;
-}
+} */

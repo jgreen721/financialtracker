@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {motion} from "framer-motion"
 import {Outlet} from "react-router-dom"
-import { PageHeader,Navbar,MobileNav } from '../../components'
+import { PageHeader,Navbar,MobileNav,ModalOverlay } from '../../components'
 import { AppProvider } from '../../context/AppContext'
 import "./Dashboard.css"
 
@@ -26,6 +26,7 @@ const Dashboard = () => {
           <PageHeader/>
           <div className="dash-views-content">
            <Outlet/>
+           {/* <ModalOverlay/> */}
           </div>
         </div>
         <MobileNav/>

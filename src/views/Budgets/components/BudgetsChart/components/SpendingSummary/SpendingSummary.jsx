@@ -11,10 +11,9 @@ const SpendingSummary = ({categories,transactions}) => {
     <div className="spending-summary-card">
         <h2 className="spending-summary-title">Spending Summary</h2>
         <ul className="categories">
-            {categories.map(category=>(
-           
-                <SpendingSummaryItem key={category.id} category={category.category} transactions={transactions}/>
-            ))}
+            {categories.filter((_,idx)=>idx < 5).map(category=>
+                <SpendingSummaryItem key={category.id} category={category.category} theme={category.theme} transactions={transactions}/>
+            )}
         </ul>
     </div>
   )

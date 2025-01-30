@@ -126,8 +126,12 @@ label {
   font-weight: 200;
 }
 
-.ml-2 {
+.ml-1 {
   margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
 }
 
 .mb-2 {
@@ -140,6 +144,10 @@ label {
 
 .mid-thin {
   font-weight: 300;
+}
+
+.mid-bold {
+  font-weight: 500;
 }
 
 .underline {
@@ -260,6 +268,10 @@ label {
 
 .column-data {
   gap: 1.5rem;
+}
+
+.gap-1 {
+  gap: 0.75rem;
 }
 
 .gap-2 {

@@ -10,18 +10,11 @@ import "./PageHeader.css"
 const PageHeader = () => {
     const location = useLocation();
     const {handleSignOut,user} = useAuthContext();
-    const {setShowMenu,showMenu} = useAppContext();
+    const {setShowMenu,showMenu,setShowModal} = useAppContext();
 
     // console.log(location.pathname)
 
-    const toggleModal=()=>{
-      if(location.pathname == "/budgets"){
-        console.log('toggle add budgets modal!')
-      }
-      else{
-        console.log("toggle pots modal!");
-      }
-    }
+
     
   return (
     <div className="page-header">
@@ -32,7 +25,7 @@ const PageHeader = () => {
             <IoMdNavigate />
           </button>
           </div>
-          {location.pathname == "/pots" || location.pathname == "/budgets" || location.pathname == "/transactions" ? <button className="btn dark-btn" onClick={toggleModal}>+ <span className="desktop-btn-text">Add New {location.pathname.split("/")[1].replace("s","")}</span></button> : null}
+          {location.pathname == "/pots" || location.pathname == "/budgets" || location.pathname == "/transactions" ? <button className="btn dark-btn" onClick={()=>setShowModal((showModal)=>showModal=!showModal)}>+ <span className="desktop-btn-text">Add New {location.pathname.split("/")[1].replace("s","")}</span></button> : null}
           <button onClick={handleSignOut} className="signout-btn icon-btn">
             <FaSignOutAlt/>
           </button>

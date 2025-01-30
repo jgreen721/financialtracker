@@ -1,0 +1,23 @@
+.modal-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  transition: 0.5s ease;
+}
+
+.modal-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+}
+
+.show-modaloverlay {
+  transform: translateX(0%);
+}
+
+.hide-modaloverlay {
+  transform: translateX(-100vw);
+}

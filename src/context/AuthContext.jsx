@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
             // console.log("Username",username);
             setUser(username);
             if(status == 200)setTimeout(()=>{navigate("/")},1500);
-            else navigate("/budgets");
+            else navigate("/transactions");
             
         }
     })

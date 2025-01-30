@@ -10,13 +10,24 @@
 .dash-view-container {
   width: 100%;
   padding: 0rem 3.2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .dash-views-content {
   padding: 2rem 0;
   height: 100%;
   overflow: auto;
+
+  /* border: 3px solid red; */
 }
+
+/* .dash-view-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(5px);
+} */
 
 .dash-views-content::-webkit-scrollbar {
   display: none;

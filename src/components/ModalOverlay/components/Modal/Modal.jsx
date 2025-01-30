@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../../../context/AppContext'
 import "./Modal.css"
 
 const Modal = ({title,caption,children}) => {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Modal } from '../../../../components'
+// import { Modal } from '../../../../components'
 import {iconCaretDown,themes,categories} from "../../../../const"
 import "./EditModal.css"
 
@@ -15,7 +15,7 @@ const EditModal = () => {
 
 
   return (
-    <Modal title = "Edit Modal" caption = "As your budgets change, feel free to update your spending limits.">
+    // <Modal title = "Edit Modal" caption = "As your budgets change, feel free to update your spending limits.">
     <div className="edit-modal">
        <div className="form-div">
        <label className="form-label" htmlFor="category">Budget Category</label>
@@ -69,7 +69,7 @@ const EditModal = () => {
            <button className="btn dark-btn">Add Budget</button>
        </div>
     </div>
-    </Modal>
+    // </Modal>
   )
 }
 

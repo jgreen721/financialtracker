@@ -48,6 +48,10 @@ body {
 
 /* Recurring/Budgets utility classes */
 
+.flex {
+  display: flex;
+}
+
 .view-content-flex {
   display: flex;
   gap: 2rem;

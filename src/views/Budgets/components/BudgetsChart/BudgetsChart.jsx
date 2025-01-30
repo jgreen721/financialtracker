@@ -4,7 +4,7 @@ import "./BudgetsChart.css"
 
 const BudgetsChart = ({transactions,categories}) => {
   return (
-    <div className="section-card">
+    <div className="section-card budgets-card">
         <div className="chart">
           <div className="budgets-chart">
             <div className="chart-circle">

@@ -1,0 +1,23 @@
+.transaction-modal-parent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+}
+
+.transaction-modal {
+  /* position: relative; */
+  /* z-index: 10; */
+}
+
+.show-transaction-modal {
+  filter: blur(0px);
+  transition: 1s ease;
+}
+
+.hide-transaction-modal {
+  filter: blur(100px);
+  transition: 1s ease;
+}

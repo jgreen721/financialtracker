@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {iconSearch} from "../../const"
 import {useAppContext} from "../../context/AppContext"
+import { ModalOverlay } from '../../components'
 import {DropDownInput, FormatAmount,FormatDate,TransactionModal} from "./components"
 import "./Transactions.css"
 
 const Transactions = () => {
-  const {transactions} = useAppContext();
+  const {transactions, showModal,setShowModal} = useAppContext();
+  const [batch, setBatch] = useState([]);
+  const [page,setPage] = useState(1)
+
+
   let dateFields =[
     {id:1,field:"Oldest"},
     {id:2,field:"A-Z"},
@@ -22,8 +27,24 @@ let categoryFields =[
   {id:4,field:"Dining Out"},
   {id:5,field:"Transportation"},
 ]
+
+
+useEffect(()=>{
+  populatePages();
+  populateBatch();
+},[transactions])
+
+const populatePages=()=>{
+
+}
+
+const populateBatch=()=>{
+  let temp_batch = transactions.filter((t,idx)=>idx < 10)
+  setBatch(temp_batch);
+}
   return (
     <div className="section-card">
+
       {/* <ul className="transactions">
         {transactions.map((transaction,idx)=>(
           <TransactionItem key={idx} transaction={transaction}/>
@@ -56,7 +77,7 @@ let categoryFields =[
           </tr>
         </thead>
         <tbody>
-        {transactions.map((transaction,idx)=>(
+        {batch.map((transaction,idx)=>(
           <tr className="transaction-row" key={idx}>
             <td className="flex-start gap-2">
             <div className="avatar-div">
@@ -77,7 +98,9 @@ let categoryFields =[
         ))}
         </tbody>
       </table>
-      <TransactionModal/>
+      <ModalOverlay title="Add New Transaction" caption="Add a new transaction">
+         <TransactionModal/>
+     </ModalOverlay>
     </div>
   )
 }

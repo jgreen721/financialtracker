@@ -3,6 +3,7 @@ import { categories } from '../../const'
 import {EditModal,AddModal,BudgetCard,BudgetsChart} from "./components"
 import { useAppContext } from '../../context/AppContext'
 import "./Budgets.css"
+import ModalOverlay from '../../components/ModalOverlay/ModalOverlay'
 
 
 const Budgets = () => {
@@ -16,8 +17,10 @@ const Budgets = () => {
 
   return (
     <div className="budgets-view-parent-container">
-{showModal && <EditModal/>}
-{showModal && <AddModal/>}
+
+<ModalOverlay>
+  <EditModal/>
+</ModalOverlay>
 <div className="budgets-view-content view-content-flex">
   <div className="view-content-column thin-content-column">
     <BudgetsChart categories={categories} transactions={transactions}/>

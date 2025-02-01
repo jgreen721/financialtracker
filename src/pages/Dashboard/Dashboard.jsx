@@ -16,7 +16,6 @@ const FadeInComponent = ({children})=>{
 }
 
 const Dashboard = () => {
-
   // console.log(showMenu)
   return (
     <AppProvider>

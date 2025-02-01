@@ -41,6 +41,10 @@ a {
   text-decoration: none;
 }
 
+label {
+  white-space: nowrap;
+}
+
 li {
   list-style: none;
 }
@@ -77,6 +81,10 @@ label {
 
 .label-text {
   color: var(--labelText);
+}
+
+.text-light {
+  color: var(--beige100);
 }
 
 .bold {

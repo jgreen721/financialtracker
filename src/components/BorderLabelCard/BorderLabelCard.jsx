@@ -5,7 +5,7 @@ import "./BorderLabelCard.css"
 
 const BorderLabelCard = ({delay,label,amount,theme}) => {
 
-    console.log(delay);
+    // console.log(delay);
   return (
     <li className="pot-summary-item">
     <div style={{backgroundColor:theme,"--delay":`${delay/2}s`}} className="pot-summary-border"></div>

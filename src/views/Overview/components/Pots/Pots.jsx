@@ -11,7 +11,7 @@ import "./Pots.css"
 const Pots = () => {
   const {pots} = useAppContext();
   // console.log("Pots",pots);
-  console.log(pots)
+  // console.log(pots)
  
   return (
     <div className="pots-card section-card">

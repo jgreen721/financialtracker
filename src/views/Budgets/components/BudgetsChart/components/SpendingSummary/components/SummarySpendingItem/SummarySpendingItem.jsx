@@ -7,14 +7,14 @@ const SummarySpendingItem = ({category,theme,transactions}) => {
 
     function printItem(renderCategory){
         if(category == renderCategory){
-    console.log(`${category}:`)
+    // console.log(`${category}:`)
     let spendingTotal = transactions.filter(t=>t.category == category)
     spendingTotal = spendingTotal.map(s=>Math.abs(s.amount));
     spendingTotal = spendingTotal.reduce((acc,num)=>acc + num,0);
     let spendingCollected = transactions.filter(t=>t.category == category)
     spendingCollected = spendingCollected.map(s=>s.amount);
     spendingCollected = spendingCollected.reduce((acc,num)=>acc + num,0);
-    console.log(`${spendingCollected}/${spendingTotal}`)
+    // console.log(`${spendingCollected}/${spendingTotal}`)
             setTotal(spendingCollected);
             setAchieved(spendingTotal)
         }

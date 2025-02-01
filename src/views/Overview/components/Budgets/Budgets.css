@@ -15,12 +15,13 @@
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: conic-gradient(
+  border: 1px solid black;
+  /* background: conic-gradient(
     var(--cyan) 0deg 120deg,
     var(--gold) 120deg 180deg,
     var(--red) 180deg 300deg,
     var(--magenta) 300deg 360deg
-  );
+  ); */
 }
 
 .budgets-chart::after {

@@ -4,7 +4,7 @@ import "./FormatAmount.css"
 const FormatAmount = ({amount}) => {
   return (
     <div>
-        <h4 className={`semi-bold ${amount > 0 ? 'green-text' : 'dark-text'}`}>{amount > 0 ? "+" : "-"}${Math.abs(amount)}</h4>
+        <h4 className={`semi-bold ${amount > 0 ? 'green-text' : 'dark-text'}`}>{amount > 0 ? "+" : "-"}${Math.abs(amount).toFixed(2)}</h4>
     </div>
   )
 }

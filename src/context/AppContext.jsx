@@ -27,9 +27,11 @@ export const AppProvider = ({ children }) => {
       setBudgets(res.budgets);
       setTransactions(res.transactions);
     })
-    
+    }, []);
+
   
-  }, []);
+
+ 
 
   const values = {showMenu,
                  setShowMenu,

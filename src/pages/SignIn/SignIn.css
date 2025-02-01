@@ -81,6 +81,12 @@
   position: relative;
 }
 
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* .password-btn {
   position: absolute;
   right: 1rem;

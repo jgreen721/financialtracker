@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useCallback} from 'react'
 import {iconSearch} from "../../const"
 import {useAppContext} from "../../context/AppContext"
 import { ModalOverlay } from '../../components'
@@ -6,17 +6,22 @@ import {DropDownInput, FormatAmount,FormatDate,TransactionModal} from "./compone
 import "./Transactions.css"
 
 const Transactions = () => {
-  const {transactions, showModal,setShowModal} = useAppContext();
-  const [batch, setBatch] = useState([]);
-  const [page,setPage] = useState(1)
+  const {transactions} = useAppContext();
+  const [batch, setBatch] = useState(transactions.filter((t,idx)=>idx < 6));
+  const [transactionName,setTransactionName] = useState("");
+  const [category,setCategory] = useState("All Categories");
+  const [sortedBy,setSortedBy] = useState("Latest")
+  const [rendered,setRendered] = useState(false)
 
 
-  let dateFields =[
+  let sortedByFields =[
+    {id:0,field:"Latest"},
     {id:1,field:"Oldest"},
     {id:2,field:"A-Z"},
     {id:3,field:"Z-A"},
     {id:4,field:"Highest"},
     {id:5,field:"Lowest"},
+  
 ]
 
 
@@ -26,43 +31,76 @@ let categoryFields =[
   {id:3,field:"Groceries"},
   {id:4,field:"Dining Out"},
   {id:5,field:"Transportation"},
+  {id:6,field:"All Categories"},
 ]
 
 
 useEffect(()=>{
-  populatePages();
-  populateBatch();
+  if(transactions.length){
+    setBatch(transactions.filter((t,idx)=>idx < 6))
+    
+  }
 },[transactions])
 
-const populatePages=()=>{
+useEffect(()=>{
+  if(category != "All Categories"){
+    let temp = transactions.filter(t=>t.category == category);
+    setBatch(temp);
+    console.log("Filtering transactions to category of ",category);
+  }
+  else{
+   setBatch(transactions.filter((t,idx)=>idx < 6))
+}
+},[category])
+
+
+useEffect(()=>{
+  if(sortedBy == "Highest"){
+    // console.log("sorting by highest!")
+    setBatch(batch=>batch = [...batch].sort((a,b)=>a.amount - b.amount));
+    
+  }
+
+  if(sortedBy == "Lowest"){
+    // console.log("sorting by lowest!")
+    setBatch(batch=>batch = [...batch].sort((a,b)=>b.amount - a.amount));
 
 }
 
-const populateBatch=()=>{
-  let temp_batch = transactions.filter((t,idx)=>idx < 10)
-  setBatch(temp_batch);
+if(sortedBy == "Z-A"){
+  setBatch((batch=>batch=[...batch].sort((a,b)=>a.name.charCodeAt(0) - b.name.charCodeAt(0))))
 }
-  return (
+
+if(sortedBy == "A-Z"){
+  setBatch((batch=>batch=[...batch].sort((a,b)=>b.name.charCodeAt(0) - a.name.charCodeAt(0))))
+}
+
+},[sortedBy])
+
+
+// const populateBatch=()=>{
+//   let temp_batch = transactions.filter((t,idx)=>idx < 6)
+//   console.log("tempBatch",temp_batch)
+//   setBatch(temp_batch);
+// }
+
+return (
     <div className="section-card">
 
-      {/* <ul className="transactions">
-        {transactions.map((transaction,idx)=>(
-          <TransactionItem key={idx} transaction={transaction}/>
-        ))}
-      </ul> */}
+   
       <div className="space-between mb-4 gap-2">
         <div className="search-form-div form-div">
           <label className="form-label" htmlFor="">
-          <input type="text" className="form-control" placeholder="Search transactions" />
+          <input type="text" className="form-control" name="transaction-name" value={transactionName} onChange={(e)=>setTransactionName(e.target.value)} placeholder="Search transactions" />
           <img className="form-icon" src={iconSearch} alt="" />
           </label>
         </div>
         <div className="dropdown-row">
           <div className="dropdown-column">
-            <DropDownInput labelCaption="Sort by" placeholder="Latest" fields={dateFields}/>
+            <DropDownInput labelCaption="Sort by" placeholder={sortedBy} fields={sortedByFields} handleFunc={setSortedBy}/>
           </div>
           <div className="dropdown-column">
-          <DropDownInput labelCaption="Category" placeholder="All Transactions" fields={categoryFields}/>
+          <DropDownInput labelCaption="Category" placeholder={category} fields={categoryFields} handleFunc={setCategory}/>
 
           </div>
         </div>

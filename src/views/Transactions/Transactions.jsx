@@ -7,11 +7,13 @@ import "./Transactions.css"
 
 const Transactions = () => {
   const {transactions} = useAppContext();
-  const [batch, setBatch] = useState(transactions.filter((t,idx)=>idx < 6));
+  const [batch, setBatch] = useState([]);
   const [transactionName,setTransactionName] = useState("");
   const [category,setCategory] = useState("All Categories");
   const [sortedBy,setSortedBy] = useState("Latest")
-  const [rendered,setRendered] = useState(false)
+  const [pages,setPages] = useState([]);
+  const [currPage,setCurrPage] = useState(0);
+  let perPage = 5;
 
 
   let sortedByFields =[
@@ -37,12 +39,28 @@ let categoryFields =[
 
 useEffect(()=>{
   if(transactions.length){
-    setBatch(transactions.filter((t,idx)=>idx < 6))
+    let temp_batch = transactions.filter((t,idx)=>idx < 6)
+    setBatch(temp_batch);
+    calculatePages(transactions)
     
   }
 },[transactions])
 
+const calculatePages=(transactions)=>{
+  let temp_pages = [];
+  for(let i=1;i<transactions.length/perPage;i++){
+    temp_pages.push(i);
+  }
+  // console.log(temp_pages);
+  setPages(temp_pages);
+  let firstIdx = perPage * currPage;
+  let lastIdx = firstIdx + perPage;
+  let temp_batch = transactions.slice(firstIdx,lastIdx);
+  setBatch(temp_batch);
+}
+
 useEffect(()=>{
+  //category filter 
   if(category != "All Categories"){
     let temp = transactions.filter(t=>t.category == category);
     setBatch(temp);
@@ -55,6 +73,7 @@ useEffect(()=>{
 
 
 useEffect(()=>{
+  //sort
   if(sortedBy == "Highest"){
     // console.log("sorting by highest!")
     setBatch(batch=>batch = [...batch].sort((a,b)=>a.amount - b.amount));
@@ -74,21 +93,25 @@ if(sortedBy == "Z-A"){
 if(sortedBy == "A-Z"){
   setBatch((batch=>batch=[...batch].sort((a,b)=>b.name.charCodeAt(0) - a.name.charCodeAt(0))))
 }
+if(sortedBy == "Latest"){}
+if(sortedBy == "Oldest"){}
 
 },[sortedBy])
 
+const handleChangePage=(page)=>{
+  setCurrPage(page);
+  let firstIdx = perPage * page;
+  let lastIdx = firstIdx + perPage;
+  let batch = transactions.slice(firstIdx,lastIdx);
+  setBatch(batch);
+}
 
-// const populateBatch=()=>{
-//   let temp_batch = transactions.filter((t,idx)=>idx < 6)
-//   console.log("tempBatch",temp_batch)
-//   setBatch(temp_batch);
-// }
 
 return (
     <div className="section-card">
 
    
-      <div className="space-between mb-4 gap-2">
+      <div className="mb-4 gap-2 transaction-filter-row">
         <div className="search-form-div form-div">
           <label className="form-label" htmlFor="">
           <input type="text" className="form-control" name="transaction-name" value={transactionName} onChange={(e)=>setTransactionName(e.target.value)} placeholder="Search transactions" />
@@ -136,6 +159,12 @@ return (
         ))}
         </tbody>
       </table>
+      <ul className="pages">
+        {pages.map((page,idx)=>(
+          <li className={`${currPage == page ? 'active-page' : ''}`} onClick={()=>handleChangePage(page)} key={idx}>{page}</li>
+        ))}
+      </ul>
+      {/* <h4>CurrPage:{currPage}</h4> */}
       <ModalOverlay title="Add New Transaction" caption="Add a new transaction">
          <TransactionModal/>
      </ModalOverlay>

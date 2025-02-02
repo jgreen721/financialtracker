@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import {useAuthContext} from "./AuthContext"
+import { addTransactionToFirestore,fetchTransactionsFromFirestore } from "../utils/firestore";
 const AppContext = createContext();
 
 export const useAppContext = () => useContext(AppContext);
@@ -18,18 +19,33 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     // appcontext
-    fetch("data.json")
-    .then(res=>res.json())
-    .then(res=>{
-      // console.log("Res",res);
-      setBalance(res.balance);
-      setPots(res.pots);
-      setBudgets(res.budgets);
-      setTransactions(res.transactions);
-    })
-    }, []);
+    // fetch("data.json")
+    // .then(res=>res.json())
+    // .then(res=>{
+    //   console.log("Res",res);
+    //   setBalance(res.balance);
+    //   setPots(res.pots);
+    //   setBudgets(res.budgets);
+    //   setTransactions(res.transactions);
+    // })
+    if(user){
 
-  
+     fetchTransactions();
+    }
+    async function fetchTransactions(){
+      let usersTransactions = await fetchTransactionsFromFirestore(user)
+      console.log(usersTransactions);
+    }
+    }, [user]);
+
+    const addTransaction=async(newTransaction)=>{
+      console.log('handleAddTransaction');
+      let avatarImg = newTransaction.avatar;
+      delete newTransaction.avatar
+      newTransaction.client = user;
+      console.log("user",user);
+      addTransactionToFirestore(newTransaction)
+    }
 
  
 
@@ -37,6 +53,7 @@ export const AppProvider = ({ children }) => {
                  setShowMenu,
                  showModal,
                  setShowModal,
+                 addTransaction,
                  balance,
                  pots,
                  budgets,

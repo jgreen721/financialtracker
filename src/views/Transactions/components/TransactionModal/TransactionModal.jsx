@@ -6,11 +6,11 @@ import DropDownInput from "../DropDownInput/DropDownInput"
 import "./TransactionModal.css"
 
 const TransactionModal = () => {
-  const [amount,setAmount] = useState("");
-  const [username,setUsername] = useState("");
-  const [category,setCategory] = useState("");
+  const [amount,setAmount] = useState("200");
+  const [username,setUsername] = useState("test-user");
+  const [category,setCategory] = useState("Entertainment");
   const [avatar,setAvatar] = useState("");
-  const {setShowModal} = useAppContext();
+  const {setShowModal,addTransaction} = useAppContext();
 
 
   const { transactions } = useAppContext();
@@ -36,6 +36,7 @@ const TransactionModal = () => {
           avatar,
     }
     console.log(newTransaction)
+    addTransaction(newTransaction)
     setShowModal(false)
   }
   return (
@@ -50,9 +51,9 @@ const TransactionModal = () => {
         <div className="form-div">
            <label className="form-label" htmlFor="amount">Amount</label>
            <input type="text" value={amount} onChange={(e)=>setAmount(e.target.value)} name="amount" autoComplete="off" id="amount" className="form-control" placeholder="e.g. 2000" />
-           <span className={`input-span-icon ${amount != "" ? '' : 'muted-span'}`}>
+           {/* <span className={`input-span-icon ${amount != "" ? '' : 'muted-span'}`}>
                <h5>$</h5>
-           </span>
+           </span> */}
        </div>
         </div>
         <div className="form-div form-row">

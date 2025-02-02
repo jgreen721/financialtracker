@@ -33,7 +33,7 @@
   transform: translateY(0rem);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1050px) {
   .page-header-h1 {
     font-size: 1.4rem;
   }

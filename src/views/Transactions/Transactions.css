@@ -1,3 +1,9 @@
+.transaction-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .search-form-div {
   position: relative;
   flex: 1;
@@ -35,4 +41,46 @@ td {
 
 tr {
   padding: 1.2rem;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.active-page {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 1050px) {
+  .transaction-filter-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-form-div {
+    width: 100%;
+  }
+
+  .dropdown-row {
+    /* flex-direction: column; */
+    width: 100%;
+    /* gap: 1rem; */
+  }
+
+  .dropdown-column {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .dropdown-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
 }
